@@ -12,30 +12,47 @@
 			<link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
 		<!--<![endif]-->
 		<link rel="stylesheet" href="static/msk_beat.css"/>
+		<script src="static/d3.v3.min.js"></script>
+		<script src="static/topojson.v1.min.js"></script>
+		<script src="static/msk_beat.js"></script>
 	</head>
 	<body>
 		<div id="dots"></div>
 		<div class="pure-g">
-			<div class="pure-u-8-24">
-				<!--<img class="pure-img" id="logo-img" src="http://placehold.it/50?text=Logo"/>-->
-				<div class="frame-logo">
-					<!--<img class="pure-img logo-element" src="static/logo.svg"/>-->
-					<h1 class="logo">Pulse.MSK.RU</h1>
+			<div class="pure-u-1-4">
+				<div class="pure-g">
+					<div class="pure-u-1-4">
+						<div class="frame-logo">
+							<img width="100%" src="static/logo.svg"/>
+						</div>
+					</div>
+					<div class="pure-u-3-4">
+						<div class="frame-horizontal">
+							<h1>Pulse.MSK</h1>
+						</div>
+						<div class="frame-horizontal">
+							<p id="timer"></p>
+						</div>
+
+					</div>
 				</div>
 			</div>
-			<div class="pure-u-16-24">
-				<div class="frame-horizontal">
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
-					<p>Съешь еще этих булок да выпей чаю</p>
+			<div class="pure-u-14-24">
+				<p>Карта захвата мира</p>
+				<div id="map" width="100%"></div>
+			</div>
+			<div class="pure-u-4-24">
+				<div class="frame-vertical">
+					<p>Кусочек с новостями</p>
 				</div>
 			</div>
 		</div>
+		<script>
+		(function() {
+			startTime();
+			map = new Map({width:document.getElementById('map').offsetWidth, height:window.innerHeight*.7, placeholder:'div#map'});
+			map.render();
+		})();
+		</script>
 	</body>
 </html>
